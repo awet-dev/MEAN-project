@@ -1,0 +1,15 @@
+<!--////////////////////////////////////////user form///////////////////////////////////////////////-->
+<!--///////////////////////////////////link it to the server////////////////////////////////////////-->
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<form class="form-inline" #formName="ngForm" (ngSubmit)="submit()">
+  <input name="first_name" [(ngModel)]="userModule.firstName" #inputName="ngModel" type="text" class="form-control mb-2 mr-sm-2" placeholder="Jane Doe">
+  <input name="last_name" [(ngModel)]="userModule.lastName" #inputName="ngModel" type="text" class="form-control mb-2 mr-sm-2" placeholder="Jane Doe">
+
+  <select name="job" [(ngModel)]="userModule.profession" #inputName="ngModel" class="form-control">
+    <option *ngFor="let job of jobs" value="{{ job }}">{{ job }}</option>
+  </select>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+
+<router-outlet></router-outlet>
