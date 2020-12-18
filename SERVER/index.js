@@ -24,7 +24,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .catch((err) => console.log(err))
 // rout
 
-app.get('/all-user', (req, res)=> {
+app.get('/get-users', (req, res)=> {
     Blog.find()
         .then((result) => res.send(result))
         .catch((err) => res.send(err))
@@ -46,6 +46,7 @@ app.post('/add-user', (req, res)=> {
     blogs.save()
         .then(result => res.send(result))
         .catch(err => res.send(err))
+    res.redirect('/get-users')
 
 })
 

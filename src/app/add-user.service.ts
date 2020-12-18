@@ -15,7 +15,12 @@ export class AddUserService {
   }
 
   public addUser(user: User): Observable<any> {
-    this.url = 'http://localhost:9000/add-user'
+    this.url = 'http://localhost:9000/add-user';
     return  this.http.post(this.url, user);
+  }
+
+  public getUsers(): Observable<any>{
+    this.url = 'http://localhost:9000//get-users';
+    return this.http.get(this.url);
   }
 }
